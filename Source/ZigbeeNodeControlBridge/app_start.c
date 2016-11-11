@@ -612,7 +612,7 @@ PUBLIC void App_DeviceAnnounceCallback( void*   pvParam )
    	 case LeTV_TRANSPORT_KEY:
 	 		//DBG_vPrintf (TRUE, "\n-----SendActiveEndpointsRequest : 0x%x CALLBACK\n",u16ActiveEndpointReqAddr );
 			//vLog_Printf ( TRUE,LOG_DEBUG, "\n-----SendActiveEndpointsRequest : 0x%x CALLBACK\n",iDeviceAnnounceAction[*u8Instance].u16ShortAddress );
-			estatus = SendActiveEndpointsRequest(iDeviceAnnounceAction[temp].u16ShortAddress);
+			estatus = SendActiveEndpointsRequest(iDeviceAnnounceAction[temp].u16ShortAddress);
    			DBG_vPrintf (TRUE, "\n-----SendActiveEndpointsRequest : 0x%x 0x%x\n",temp,iDeviceAnnounceAction[temp].u16ShortAddress);
    			 //vLog_Printf (TRUE,LOG_DEBUG, "\n-----status : 0x%x \n",estatus );
      	  break;
@@ -621,7 +621,7 @@ PUBLIC void App_DeviceAnnounceCallback( void*   pvParam )
 #if 1
 	 		iDeviceAnnounceAction[temp].sEndpoint.u8SimpleReqSent = 0;
 		 	DBG_vPrintf (TRUE, "\n-----SendSimpleDescriptorRequest : 0x%x 0x%x CALLBACK\n",iDeviceAnnounceAction[temp].u16ShortAddress,iDeviceAnnounceAction[temp].sEndpoint.u8SimpleReqSent);
-			estatus = SendSimpleDescriptorRequest(iDeviceAnnounceAction[temp].u16ShortAddress,iDeviceAnnounceAction[temp].sEndpoint.u8EndpointNumber[0]);
+			estatus = SendSimpleDescriptorRequest(iDeviceAnnounceAction[temp].u16ShortAddress,iDeviceAnnounceAction[temp].sEndpoint.u8EndpointNumber[0]);
 			iDeviceAnnounceAction[temp].sEndpoint.u8SimpleReqSent++;
 			//DBG_vPrintf (TRUE, "\n-----status : 0x%x \n",estatus );
 #endif
@@ -632,14 +632,14 @@ PUBLIC void App_DeviceAnnounceCallback( void*   pvParam )
 		    if(iDeviceAnnounceAction[temp].sEndpoint.u8SimpleReqSent < iDeviceAnnounceAction[temp].sEndpoint.u8NumOfSize)
 		  	{
 		 		//DBG_vPrintf (TRUE, "\n-----SendSimpleDescriptorRequest : 0x%x 0x%x CALLBACK\n",iDeviceAnnounceAction[temp].u16ShortAddress,iDeviceAnnounceAction[temp].sEndpoint.u8SimpleReqSent);
-   				estatus = SendSimpleDescriptorRequest(iDeviceAnnounceAction[temp].u16ShortAddress,iDeviceAnnounceAction[temp].sEndpoint.u8EndpointNumber[iDeviceAnnounceAction[temp].sEndpoint.u8SimpleReqSent]);
+   				estatus = SendSimpleDescriptorRequest(iDeviceAnnounceAction[temp].u16ShortAddress,iDeviceAnnounceAction[temp].sEndpoint.u8EndpointNumber[iDeviceAnnounceAction[temp].sEndpoint.u8SimpleReqSent]);
 				iDeviceAnnounceAction[temp].sEndpoint.u8SimpleReqSent++;
 				//DBG_vPrintf (TRUE, "\n-----status : 0x%x \n",estatus );
 		  	}
 			else if(iDeviceAnnounceAction[temp].sEndpoint.u8SimpleReqSent == iDeviceAnnounceAction[temp].sEndpoint.u8NumOfSize)
 			{
 				//DBG_vPrintf (TRUE, "\n-----SendNodeDescRequest : 0x%x CALLBACK\n",iDeviceAnnounceAction[temp].u16ShortAddress );
-   				estatus = SendNodeDescRequest(iDeviceAnnounceAction[temp].u16ShortAddress);
+   				estatus = SendNodeDescRequest(iDeviceAnnounceAction[temp].u16ShortAddress);
    				//DBG_vPrintf (TRUE, "\n-----status : 0x%x \n",estatus );
 			}
 #endif
