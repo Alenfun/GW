@@ -620,7 +620,7 @@ PUBLIC void APP_vHandleStackEvents ( ZPS_tsAfEvent*    psStackEvent )
                         }
                         ZNC_BUF_U8_UPD   ( &au8StatusBuffer [u16Length] , sApsZdpEvent.uZdpData.sSimpleDescRsp.sSimpleDescriptor.u8OutClusterCount,    u16Length );
                         i =  0;
-                        while ( i < sApsZdpEvent.uZdpData.sSimpleDescRsp.sSimpleDescriptor.u8InClusterCount )
+                        while ( i < sApsZdpEvent.uZdpData.sSimpleDescRsp.sSimpleDescriptor.u8OutClusterCount )
                         {
                             ZNC_BUF_U16_UPD  ( &au8StatusBuffer [u16Length] , sApsZdpEvent.uLists.au16Data [ i ],         u16Length );
                             i++;
